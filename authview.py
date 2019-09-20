@@ -55,10 +55,10 @@ class AuthView():
                     else:
                         break
                 except telethon.errors.rpcerrorlist.FloodWaitError as err:
-                    self.stdscr.addstr(f"The telegram servers blocked you for too many retries ({err.seconds}s remaining). ")
+                    self.stdscr.addstr(f"The telegram servers blocked you for too many retries. ({err.seconds}s remaining).")
                     self.stdscr.refresh()
                 except Exception as e: 
-                    self.stdscr.addstr("Incorrect phone number. ")
+                    self.stdscr.addstr(f"An error occured: {str(e)}")
                     self.stdscr.refresh()
             self.stdscr.addstr("Now authentificate with the code telegram sent to you.")
             self.stdscr.refresh()
